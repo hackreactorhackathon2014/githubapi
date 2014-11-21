@@ -11333,27 +11333,27 @@ nv.models.scatter = function() {
 
         var points = groups.selectAll('path.nv-point')
             .data(function(d) { return d.values });
-        // points.enter().append('path')
-        //     .style('fill', function (d,i) { return d.color })
-        //     .style('stroke', function (d,i) { return d.color })
-        //     .attr('transform', function(d,i) {
-        //       return 'translate(' + x0(getX(d,i)) + ',' + y0(getY(d,i)) + ')'
-        //     })
-        //     .attr('d',
-        //       d3.svg.symbol()
-        //         .type(getShape)
-        //         .size(function(d,i) { return z(getSize(d,i)) })
-        //     );
-        // points.enter().append('svg:image')
-        //   .attr('x', function(d, i){return getX(d, i)})
-        //   .attr('y', function(d, i){return getY(d, i)})
-        //   .attr('width', function(d, i){return getSize(d, i)})
-        //   .attr('xlink:href', 'sushi_part5.png');
-        points.enter().append('image')
-          .attr('x', 10)
-          .attr('y', 10)
-          .attr('width', 10)
+        points.enter().append('path')
+            .style('fill', function (d,i) { return d.color })
+            .style('stroke', function (d,i) { return d.color })
+            .attr('transform', function(d,i) {
+              return 'translate(' + x0(getX(d,i)) + ',' + y0(getY(d,i)) + ')'
+            })
+            .attr('d',
+              d3.svg.symbol()
+                .type(getShape)
+                .size(function(d,i) { return z(getSize(d,i)) })
+            );
+        points.enter().append('svg:image')
+          .attr('x', function(d, i){return getX(d, i)})
+          .attr('y', function(d, i){return getY(d, i)})
+          .attr('width', function(d, i){return getSize(d, i)})
           .attr('xlink:href', 'sushi_part5.png');
+        // points.enter().append('image')
+        //   .attr('x', 10)
+        //   .attr('y', 10)
+        //   .attr('width', 10)
+        //   .attr('xlink:href', 'sushi_part5.png');
         points.exit().remove();
         groups.exit().selectAll('path.nv-point')
             .transition()
