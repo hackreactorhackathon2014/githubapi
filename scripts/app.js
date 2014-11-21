@@ -12,12 +12,13 @@ $(function(){
   });
 
   //Axis settings
-  chart.xAxis.axisLabel('price range').tickFormat(d3.format('.02f'));
-  chart.yAxis.axisLabel('stars').tickFormat(d3.format('.02f'));
+  chart.xAxis.axisLabel('PRICE RANGE').tickFormat(d3.format('.02f'));
+  chart.yAxis.axisLabel('STARS').tickFormat(d3.format('.02f'));
   //We want to show shapes other than circles.
   chart.scatter.onlyCircles(false);
 
-  var myData = randomData(4,40);
+  var myData = randomData(5,40);
+  console.log(myData)
   d3.select('#chart svg')
       .datum(myData)
       .call(chart);
@@ -27,17 +28,17 @@ $(function(){
   return chart;
 });
 
-/**************************************
+/************************************** 
  * Simple test data generator
  */
 function randomData(groups, points) { //# groups,# points per group
   var data = [],
-      shapes = ['circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'],
-      random = d3.random.normal();
-
+      shapes = ['circle', 'cross', 'triangle-up', 'diamond', 'square'],
+      random = d3.random.normal()
+      groupsList = ['American', 'Italian', 'Japanese', 'Chinese', 'Mexican'];
   for (i = 0; i < groups; i++) {
     data.push({
-      key: 'Group ' + i,
+      key: groupsList[i],
       values: []
     });
 
