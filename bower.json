@@ -1,0 +1,22 @@
+{
+  "name": "visualization",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hackreactorhackathon2014/githubapi",
+  "authors": [
+    "John Tan <tantai.john@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "nvd3": "~1.1.15-beta",
+    "d3": "~3.4.13",
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1"
+  }
+}
